@@ -1,0 +1,394 @@
+let scriptURL =
+  "https://script.google.com/macros/s/AKfycbwmX99seweHs_2Vey1twpy7O0eFQsx9T3odOuhix5WnThqgqEvkdbG-0uVJ6-u0qakE/exec";
+let memberURL =
+  "https://script.google.com/macros/s/AKfycbyLBfeSWFfZq9mjtPB5PdumTLJ3ujAqG3NnfmaJXkI9VNGRxbQkB3v0KjxL5SKlHlz3/exec";
+let courseURL =
+  "https://script.google.com/macros/s/AKfycbwCzCUFVf8ZnMpVajdKhl2pwix6Jyhdj_oB0GSK_moKaifFEygv_UUqnvueISyXQD06xw/exec";
+
+const course2k7 = [
+  "https://script.google.com/macros/s/AKfycbwmX99seweHs_2Vey1twpy7O0eFQsx9T3odOuhix5WnThqgqEvkdbG-0uVJ6-u0qakE/exec", // logScript
+  "https://script.google.com/macros/s/AKfycbyLBfeSWFfZq9mjtPB5PdumTLJ3ujAqG3NnfmaJXkI9VNGRxbQkB3v0KjxL5SKlHlz3/exec", // member
+  "https://script.google.com/macros/s/AKfycbwCzCUFVf8ZnMpVajdKhl2pwix6Jyhdj_oB0GSK_moKaifFEygv_UUqnvueISyXQD06xw/exec", // courses
+];
+const course2k6 = [
+  "https://script.google.com/macros/s/AKfycbzz-GC8-on_g5k8c0UFu2r47mZxvL9_K8VlqncyHHdriZr307EW7TDcavQc_MSt6sw9/exec", //logScript
+  "https://script.google.com/macros/s/AKfycbz8UCzlZRMF0cBh8-crirU_a70ejwMEwMmaFEE6MhLuGDiGjkXcro1aOGicnfLJGYIX/exec", //member
+  "https://script.google.com/macros/s/AKfycbyqIS0vHkvEm1C-fBSpSiFutSthFDNxkkqbjTjpSiGIo_tJy3v9SaWd8oYQNMi1nMvHVg/exec", //courses
+];
+
+const mathSheetId = [
+  "1PEgulhZ1Ccy_2H69NG2xGtnu1WIkiQUfDiBu7tOqbr8", //LỘ TRÌNH TDMY2025
+  "1AyA7ogKA575NaXuq87IK6U51BReLSeSglQhxLO1tlPw", //LỘ TRÌNH TDMX2025 - CHINH PHỤC NỀN TẢNG VÀ VẬN DỤNG NHẸ THPT2025 - CT MỚI
+  "1N19tm4omXRSIvMtT1vFKQwddNIYMU2jorX7tRBu1p6E", //LINK TỔNG HỢP KHÓA I VÀ M - 2K7
+  "110hOx_V-0VKIrIWfiNUf30_5mlLcAU7WEoxqJ8sfvNw", //LINK TỔNG HỢP DỮ LIỆU BON 2025 - XPS ĐẶC BIỆT
+  "1ujuk4P0BJYOY2leNhroJRRPP8W69EMH8Y_pTcI9btYk", //DPAD-KHÓA TOÀN DIỆN 2K7
+  "1QAIO4Vm3MvLnCaBGoCvE-bsK_G5iRUGHBUVYwX4Qj_0", //COMBO KHÓA HỌC 2K7 THẦY NGUYỄN QUỐC CHÍ
+  "1xvvlEQH2JKdZibSkmwt5q1CGFICa9IeBSdOc6ljrP_w", //2K7 - khóa cơ bản
+];
+
+const physicsSheetId = [
+  "17gUR15pRx1TY0br3PbsGht_5SiE9mwzZ_t7g68_VU2o", //2k7 - VL12 Xuất phát sớm BÙI XUÂN ĐẠT
+  "1X9A5K-5Uvjia2BJfWyULbsXTm5SafHunNA0YH4riUcU", //Danh sách bài giảng lớp 12 - 2k7 - XPS
+];
+
+const chemistrySheetId = [
+  "12IckV3DnCv_Rdg-WnurxQEICfECK_SrE9uh_JL-d8jQ", //PHÁT TRIỂN TƯ DUY TOÀN DIỆN - XUẤT PHÁT SỚM 2007
+  "1gUvwau8aXg1aRR5zZshatjebWSJbs05dk8RWYzVUOo8", //2K7-LINK THỐNG KÊ BÀI GIẢNG LỚP HÓA ONLINE
+  "1X9A5K-5Uvjia2BJfWyULbsXTm5SafHunNA0YH4riUcU", //Danh sách bài giảng lớp 12 - 2k7 - XPS
+];
+const englishSheetId = [
+  "1fNeiTwOgFWyRiKAW2PoKou-ZJYk54GSCSNaJm8ABVPo", //ÔN TẬP THI HỌC KÌ 2-TIẾNG ANH 11
+  "1lHDxsk4usCQBCj0XBN8VF6By7o9SiWK3g_yH-9HIqWs", //TRANG ANH - Từ vựng - đọc hiểu nền tảng
+  "1jeiwoZYdrrbvkdkPUt51aTgADJcQFwQByziYxDa70Tw", //PRO 3M 2025 - VŨ MAI PHƯƠNG
+];
+
+const chemistrySheetId2k6 = [
+  "1JfmsVrOABN7Q3cDUBteBwnX6-0kTK_VOadBGyrVFbx8", //COMBO 2K6 - PHẠM THẮNG
+];
+
+const regexPW = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/;
+
+let is2k6 = false;
+var script = document.createElement("script");
+script.src = "https://code.jquery.com/jquery-3.6.3.min.js"; // Check https://jquery.com/ for the current version
+document.getElementsByTagName("head")[0].appendChild(script);
+
+document.getElementById("2k7").onclick = function () {
+  scriptURL = course2k7[0];
+  memberURL = course2k7[1];
+  courseURL = course2k7[2];
+  is2k6 = false;
+  // //console.log(scriptURL);
+  // console.log("2k7");
+};
+
+document.getElementById("2k6").onclick = function () {
+  scriptURL = course2k6[0];
+  memberURL = course2k6[1];
+  courseURL = course2k6[2];
+  is2k6 = true;
+  // console.log("2k6");
+};
+document.onkeydown = (e) => {
+  if (e.ctrlKey && e.shiftKey && e.key == "I") {
+    email.readOnly = true;
+    alert("đừng cố F12 làm gì");
+    return false;
+  }
+  if (e.ctrlKey && e.shiftKey && e.key == "C") {
+    email.readOnly = true;
+    alert("đừng cố F12 làm gì");
+    return false;
+  }
+  if (e.ctrlKey && e.shiftKey && e.key == "J") {
+    email.readOnly = true;
+    alert("đừng cố F12 làm gì");
+    return false;
+  }
+  if (e.ctrlKey && e.key == "U") {
+    email.readOnly = true;
+    alert("đừng cố F12 làm gì");
+    return false;
+  }
+  if (e.key === "F12") {
+    email.readOnly = true;
+    alert("đừng cố F12 làm gì");
+    return false;
+  }
+};
+
+const form = document.forms["contact-form"];
+const menuContainer = document.getElementById("tree");
+
+const email = document.getElementsByClassName("email")[0];
+const password = document.getElementsByClassName("password")[0];
+const ip = document.getElementById("ip");
+var contentPath = [];
+var linkPath = [];
+
+form.addEventListener("submit", (e) => {
+  document.getElementById("tree").innerHTML = "";
+  contentPath = [];
+  linkPath = [];
+  e.preventDefault();
+  if (email.value === "") {
+    notificationBox("Nhập email");
+    return false;
+  }
+
+  if (!regexPW.test(password.value)) {
+    notificationBox(
+      "Mật khẩu đúng phải từ 8 kí tự trở lên, có ít nhất 1 chữ cái hoa và 1 kí tự"
+    );
+    return false;
+  }
+  notificationBox("Vui lòng đợi");
+  email.readOnly = true;
+  password.readOnly = true;
+  var formData = new FormData();
+  // console.log("fetching");
+  formData.append("email", email.value);
+  formData.append("password", password.value);
+  formData.append("Device", localStorage.getItem("Device"));
+  console.log(localStorage.getItem("Device"));
+
+  fetch(memberURL, {
+    method: "POST",
+    body: formData,
+  })
+    .then((res) => res.json())
+    .then((data) => {
+      // console.log(data);
+      if (data.result === "failed") {
+        email.readOnly = false;
+        password.readOnly = false;
+        switch (data.msg) {
+          case "invalid_email":
+            notificationBox("Tài khoản không tồn tại");
+            break;
+          case "wrong_password":
+            notificationBox("Mật khẩu không chính xác");
+            break;
+          case "banned":
+            notificationBox("Tài khoản đang bị tạm khóa");
+        }
+      } else if (data.result === "success") {
+        switch (data.msg) {
+          case "new_device":
+            notificationBox(
+              "Phát hiện thiết bị mới. Đăng nhập thành công, đang lấy danh sách khóa học"
+            );
+            localStorage.setItem("Device", data.uuid);
+            break;
+          case "used_device":
+            notificationBox(
+              "Thiết bị đã được sử dụng trước đó. Đăng nhập thành công, đang lấy danh sách khóa học"
+            );
+            break;
+          case "pardoned_account":
+            notificationBox(
+              "Tài khoản đã được ân xá, hãy cẩn thận về sau. Đăng nhập thành công, đang lấy danh sách khóa học"
+            );
+            break;
+        }
+        loadCoursesList();
+        if (!is2k6) {
+          warp(mathSheetId, menuContainer, "TOÁN");
+          warp(physicsSheetId, menuContainer, "LÝ");
+          warp(chemistrySheetId, menuContainer, "HÓA");
+          warp(englishSheetId, menuContainer, "ANH");
+        } else {
+          warp(chemistrySheetId2k6, menuContainer, "HÓA");
+        }
+      }
+    });
+});
+
+function notificationBox(notification) {
+  const notiBox = document.getElementsByClassName("notification")[0];
+  if (notiBox.innerHTML != "") notiBox.innerHTML = "";
+  notiBox.innerHTML += `<h4 >${notification}</h4>`;
+}
+
+function warp(sheetId, container, subject) {
+  const sbj = document.createElement("div");
+  sbj.id = "subject";
+  sbj.innerHTML = subject;
+  sheetId.forEach((e) => getSheetData(sbj, e));
+  container.appendChild(sbj);
+}
+
+function loadCoursesList() {
+  fetch(courseURL)
+    .then((res) => res.json())
+    .then((data) => {
+      // //console.log(data);
+      for (var index = 1; index < data.content.length; index++) {
+        var content = data.content[index][0];
+        contentPath.push(content);
+        linkPath.push(data.content[index][3]);
+      }
+      var index = 0;
+      // //console.log(contentPath);
+      const result = contentPath.reduce((r, path) => {
+        path.split("|").reduce((childNodes, title) => {
+          let child = childNodes.find((n) => n.title === title);
+          if (!child) {
+            childNodes.push(
+              (child = { title, link: linkPath[index++ - 1], childNodes: [] })
+            );
+          }
+          return child.childNodes;
+        }, r);
+        return r;
+      }, []);
+      // //console.log(JSON.stringify(result));
+
+      createMenu(result, menuContainer);
+
+      function createMenu(menuData, container) {
+        const ul = document.createElement("ul");
+
+        menuData.forEach((item) => {
+          const li = document.createElement("li");
+          const a = document.createElement("a");
+          a.textContent = item.title;
+          a.setAttribute("href", item.link);
+          a.setAttribute("target", "_blank");
+          li.appendChild(a);
+          if (item.childNodes && item.childNodes.length > 0) {
+            a.removeAttribute("href");
+            a.classList.add("disabled-href");
+            createMenu(item.childNodes, li);
+          } else {
+            a.classList.add("targeted");
+          }
+
+          ul.appendChild(li);
+        });
+
+        container.appendChild(ul);
+      }
+
+      // //console.log("done");
+      $("#tree ul li ul").css("display", "none");
+      $("#tree .disabled-href").click(function (e) {
+        e.preventDefault();
+        $(this).closest("li").children("ul").toggle();
+      });
+      $(".targeted").click(function () {
+        // console.log("tracking...");
+        window.open(this.href, "_blank");
+        const data = new FormData();
+        data.append("ip", ip.value);
+        data.append("email", email.value);
+        data.append("date", new Date().toString());
+        data.append("link", this.href);
+        data.append("name", this.innerHTML);
+        fetch(scriptURL, {
+          method: "POST",
+          body: data,
+        })
+          .then((response) => {
+            // console.log(response.json());
+          })
+          .catch((error) => console.error("Error!", error.message));
+      });
+    });
+
+  // getSheetData(menuContainer, "");
+}
+
+function getSheetData(container, sheetId) {
+  const getSheetURL = `https://script.google.com/macros/s/AKfycbxGjSPsDiOZjQuO8dTmIHqAt9D2df0Fj1Ub-lRqgmzep3YeAheddDu_uq7c1ltfn7p4/exec?id=${sheetId}`;
+  fetch(getSheetURL, {
+    method: "GET",
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      // console.log(data);
+
+      const courseData = document.createElement("div");
+      courseData.classList.add("courseData");
+      $("div.courseData").off("click");
+
+      const courseName = document.createElement("div");
+      courseName.classList.add("courseName");
+      courseName.innerHTML = data.spreadsheetName;
+      courseData.appendChild(courseName);
+
+      // const sheetsAmount = data.content  .length;
+      data.content.forEach((sheet) => {
+        let auto = "";
+        const sheetLength = sheet.data[0].length;
+        for (let i = 0; i < sheetLength; i++) auto += "auto ";
+        //create grid
+
+        const grid = document.createElement("grid");
+        grid.id = "grid-container";
+        grid.style.gridTemplateColumns = auto;
+
+        const itemName = document.createElement("div");
+        itemName.innerHTML = sheet["sheetName: "];
+        itemName.classList.add("itemName");
+        itemName.style.gridColumn = `1 / span ${sheetLength}`;
+        grid.appendChild(itemName);
+        // console.log(sheetLength);
+
+        // console.log(sheet.data);
+        sheet.data.forEach((sheetContent) => {
+          for (let i = 0; i < sheetContent.length; i++) {
+            if (sheetContent[i].name !== "") {
+              const item = document.createElement("a");
+              item.innerHTML = sheetContent[i].name;
+              if (sheetContent[i].url !== null) {
+                item.href = sheetContent[i].url;
+              } else {
+                item.classList.add("disabled-href");
+                item.removeAttribute("href");
+              }
+
+              //expand item in grid;
+              let span_col = 0;
+              let span_row = 0;
+              for (let col = i + 1; col < sheetContent.length; col++) {
+                if (sheetContent[col].name === "") span_col++;
+                else break;
+              }
+
+              //kinda broken, and i kinda lazy to fix that
+              for (
+                let row =
+                  sheet.data.findIndex((x) => (x.name = sheetContent[i].name)) +
+                  1;
+                row < sheet.data.length;
+                row++
+              ) {
+                if (sheet.data[row][i].name === "") span_row++;
+                else break;
+              }
+
+              item.style.gridColumn = `${i + 1} / span ${span_col + 1}`;
+              // item.style.gridRow = `${
+              //   sheet.data.findIndex((x) => (x.name = sheetContent[i].name)) + 1
+              // } / span ${span_row}`;
+              item.classList.add("item");
+              item.classList.add("targeted");
+              item.setAttribute("target", "_blank");
+              grid.appendChild(item);
+            }
+          }
+        });
+
+        courseData.appendChild(grid);
+      });
+
+      container.appendChild(courseData);
+      $("grid#grid-container").hide();
+      $("div.courseData").click(function (e) {
+        $(this).children("grid#grid-container").toggle();
+      });
+      $(".targeted.item").off("click");
+      $(".targeted.item").click(function () {
+        // window.open(this.href, "_blank");
+        if (!$(this).hasClass("disabled-href")) {
+          $(this).closest("grid#grid-container").toggle();
+
+          const data = new FormData();
+          data.append("ip", ip.value);
+          data.append("email", email.value);
+          data.append("date", new Date().toString());
+          data.append("link", this.href);
+          data.append("name", this.innerHTML);
+          fetch(scriptURL, {
+            method: "POST",
+            body: data,
+          })
+            .then((response) => {})
+            .catch((error) => console.error("Error!", error.message));
+        } else {
+          $(this).closest("grid#grid-container").toggle();
+        }
+      });
+    });
+}
