@@ -1,18 +1,18 @@
 let scriptURL =
   "https://script.google.com/macros/s/AKfycbwmX99seweHs_2Vey1twpy7O0eFQsx9T3odOuhix5WnThqgqEvkdbG-0uVJ6-u0qakE/exec";
 let memberURL =
-  "https://script.google.com/macros/s/AKfycbyLBfeSWFfZq9mjtPB5PdumTLJ3ujAqG3NnfmaJXkI9VNGRxbQkB3v0KjxL5SKlHlz3/exec";
+  "https://script.google.com/macros/s/AKfycbx_0Bspa9AYB6uaYTSuuueUOeXeEDo4RM4w1Thwm1e0HM5Zcg1_Gv5Fd-ozXgFa619E/exec";
 let courseURL =
   "https://script.google.com/macros/s/AKfycbwCzCUFVf8ZnMpVajdKhl2pwix6Jyhdj_oB0GSK_moKaifFEygv_UUqnvueISyXQD06xw/exec";
 
 const course2k7 = [
   "https://script.google.com/macros/s/AKfycbwmX99seweHs_2Vey1twpy7O0eFQsx9T3odOuhix5WnThqgqEvkdbG-0uVJ6-u0qakE/exec", // logScript
-  "https://script.google.com/macros/s/AKfycbyLBfeSWFfZq9mjtPB5PdumTLJ3ujAqG3NnfmaJXkI9VNGRxbQkB3v0KjxL5SKlHlz3/exec", // member
+  "https://script.google.com/macros/s/AKfycbx_0Bspa9AYB6uaYTSuuueUOeXeEDo4RM4w1Thwm1e0HM5Zcg1_Gv5Fd-ozXgFa619E/exec", // member
   "https://script.google.com/macros/s/AKfycbwCzCUFVf8ZnMpVajdKhl2pwix6Jyhdj_oB0GSK_moKaifFEygv_UUqnvueISyXQD06xw/exec", // courses
 ];
 const course2k6 = [
   "https://script.google.com/macros/s/AKfycbzz-GC8-on_g5k8c0UFu2r47mZxvL9_K8VlqncyHHdriZr307EW7TDcavQc_MSt6sw9/exec", //logScript
-  "https://script.google.com/macros/s/AKfycbz8UCzlZRMF0cBh8-crirU_a70ejwMEwMmaFEE6MhLuGDiGjkXcro1aOGicnfLJGYIX/exec", //member
+  "https://script.google.com/macros/s/AKfycbw2-ALmcoozT8yZKohrZx76adcnQq9Y41rv_kQ-ik5Ass0_HwXLxKG6NAs9q-FPqYzT/exec", //member
   "https://script.google.com/macros/s/AKfycbyqIS0vHkvEm1C-fBSpSiFutSthFDNxkkqbjTjpSiGIo_tJy3v9SaWd8oYQNMi1nMvHVg/exec", //courses
 ];
 
@@ -21,9 +21,10 @@ const mathSheetId = [
   "1AyA7ogKA575NaXuq87IK6U51BReLSeSglQhxLO1tlPw", //LỘ TRÌNH TDMX2025 - CHINH PHỤC NỀN TẢNG VÀ VẬN DỤNG NHẸ THPT2025 - CT MỚI
   "1N19tm4omXRSIvMtT1vFKQwddNIYMU2jorX7tRBu1p6E", //LINK TỔNG HỢP KHÓA I VÀ M - 2K7
   "110hOx_V-0VKIrIWfiNUf30_5mlLcAU7WEoxqJ8sfvNw", //LINK TỔNG HỢP DỮ LIỆU BON 2025 - XPS ĐẶC BIỆT
-  "1ujuk4P0BJYOY2leNhroJRRPP8W69EMH8Y_pTcI9btYk", //DPAD-KHÓA TOÀN DIỆN 2K7
+  "1X5FajeHT9_VlL-7IMfNmScYNiuDCF8ZTPAHYmtU8CJw", //DPAD-KHÓA TOÀN DIỆN 2K7
   "1QAIO4Vm3MvLnCaBGoCvE-bsK_G5iRUGHBUVYwX4Qj_0", //COMBO KHÓA HỌC 2K7 THẦY NGUYỄN QUỐC CHÍ
   "1xvvlEQH2JKdZibSkmwt5q1CGFICa9IeBSdOc6ljrP_w", //2K7 - khóa cơ bản
+  "1g3DlNNteQ8-lGJnMeKRjrIujZLiicHHVDpsR6IthGNQ", //NGỌC HUYỀN LB - THE TRUTH
 ];
 
 const physicsSheetId = [
@@ -36,6 +37,11 @@ const chemistrySheetId = [
   "1gUvwau8aXg1aRR5zZshatjebWSJbs05dk8RWYzVUOo8", //2K7-LINK THỐNG KÊ BÀI GIẢNG LỚP HÓA ONLINE
   "1X9A5K-5Uvjia2BJfWyULbsXTm5SafHunNA0YH4riUcU", //Danh sách bài giảng lớp 12 - 2k7 - XPS
 ];
+
+const biologySheetId = [
+  "1uGRD7NfFyIZfph6-m6hhSlbEZOCmwKX7na6HFujrKU8", //PHAN KHẮC NGHỆ - Pro S: Nền tảng môn Sinh THPT
+];
+
 const englishSheetId = [
   "1fNeiTwOgFWyRiKAW2PoKou-ZJYk54GSCSNaJm8ABVPo", //ÔN TẬP THI HỌC KÌ 2-TIẾNG ANH 11
   "1lHDxsk4usCQBCj0XBN8VF6By7o9SiWK3g_yH-9HIqWs", //TRANG ANH - Từ vựng - đọc hiểu nền tảng
@@ -173,12 +179,13 @@ form.addEventListener("submit", (e) => {
         }
         loadCoursesList();
         if (!is2k6) {
-          warp(mathSheetId, menuContainer, "TOÁN");
-          warp(physicsSheetId, menuContainer, "LÝ");
-          warp(chemistrySheetId, menuContainer, "HÓA");
-          warp(englishSheetId, menuContainer, "ANH");
+          warp(mathSheetId, menuContainer, "➕ TOÁN");
+          warp(physicsSheetId, menuContainer, "⚛️ LÝ");
+          warp(chemistrySheetId, menuContainer, "🧪 HÓA");
+          warp(englishSheetId, menuContainer, "📖 ANH");
+          warp(biologySheetId, menuContainer, "⚕️ SINH");
         } else {
-          warp(chemistrySheetId2k6, menuContainer, "HÓA");
+          warp(chemistrySheetId2k6, menuContainer, "🧪 HÓA");
         }
       }
     });
